@@ -13,7 +13,7 @@ public class ArrayListDemo {
 
         System.out.printf("Before add:arrayList.size() = %d\n",arrayList.size());
 
-        arrayList.add(1);
+        arrayList.add( 1);
         arrayList.add(3);
         arrayList.add(5);
         arrayList.add(7);
