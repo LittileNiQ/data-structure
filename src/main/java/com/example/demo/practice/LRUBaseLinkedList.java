@@ -36,13 +36,14 @@ public class LRUBaseLinkedList<T> {
         this.length = 0;
     }
 
-    public LRUBaseLinkedList(Integer capacity) {
-        this.headNode = new SNode<>();
-        this.capacity = capacity;
-        this.length = 0;
-    }
+//    public LRUBaseLinkedList(Integer capacity) {
+//        this.headNode = new SNode<>();
+//        this.capacity = capacity;
+//        this.length = 0;
+//    }
 
     public void add(T data) {
+        // 获取查找元素的前一个结点
         SNode preNode = findPreNode(data);
 
         // 链表中存在，删除原数据，再插入到链表的头部
@@ -77,11 +78,13 @@ public class LRUBaseLinkedList<T> {
      */
     private void intsertElemAtBegin(T data) {
         SNode next = headNode.getNext();
+        // 将对应指针和value值的结点插入
         headNode.setNext(new SNode(data, next));
         length++;
     }
 
     /**
+     * 查找是否存在该结点，存在后
      * 获取查找到元素的前一个结点
      *
      * @param data
@@ -110,7 +113,7 @@ public class LRUBaseLinkedList<T> {
 
         // 倒数第二个结点
         while (ptr.getNext().getNext() != null) {
-            ptr = ptr.getNext();
+            ptr = ptr.getNext();// 倒数第二个
         }
 
         SNode tmp = ptr.getNext();
