@@ -20,7 +20,11 @@ public class SinglyLinkedList2 {
         }
         System.out.println("打印原始:");
         link.printAll();
-
+        if (link.isPalindrome()) {
+            System.out.println("回文");
+        } else {
+            System.out.println("不是回文");
+        }
     }
 
 
@@ -92,8 +96,36 @@ public class SinglyLinkedList2 {
                 leftLink = inverseLinkList(p);
 
             }
+            return TFResult(leftLink, rightLink);
         }
-        return true;
+
+    }
+
+    //判断是否回文：true or false
+    public boolean TFResult(Node left, Node right) {
+        Node l = left;
+        Node r = right;
+
+        System.out.println("left_:" + l.data);
+        System.out.println("right_:" + r.data);
+        while (l != null && r != null) {
+            if (l.data == r.data) {
+                l = l.next;
+                r = r.next;
+                continue;
+            } else {
+                break;
+            }
+
+        }
+
+        System.out.println("什么结果");
+        if (l == null && r == null) {
+            System.out.println("什么结果");
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //无头结点的链表翻转

@@ -172,7 +172,7 @@ public class SinglyLinkedList {
         System.out.println();
     }
 
-    //判断true or false
+    //判断是否回文：true or false
     public boolean TFResult(Node left, Node right) {
         Node l = left;
         Node r = right;
@@ -224,7 +224,7 @@ public class SinglyLinkedList {
             if (q.next == null) {
                 //　p 一定为整个链表的中点，且节点数目为奇数
                 rightLink = p.next;
-                leftLink = inverseLinkList(p);
+
                 leftLink = inverseLinkList(p).next;
                 System.out.println("左边第一个节点" + leftLink.data);
                 System.out.println("右边第一个节点" + rightLink.data);
@@ -252,13 +252,11 @@ public class SinglyLinkedList {
         Node Cur = p.next;
         p.next = null;
         Node next = null;
-
         while (Cur != null) {
             next = Cur.next;
             Cur.next = Head.next;
             Head.next = Cur;
             System.out.println("first " + Head.data);
-
             Cur = next;
         }
 

@@ -42,11 +42,11 @@ public class LinkListAlgo {
      * https://blog.csdn.net/qq_35807952/article/details/80622296 图解
      */
     public static Node reverse(Node list) {
-        // 头节点设为null
+
         Node headNode = null;
-        // 当前节点前一节点
+
         Node previousNode = null;
-        // 当前节点
+
         Node currentNode = list;
         while (currentNode != null) {
             Node nextNode = currentNode.next;
