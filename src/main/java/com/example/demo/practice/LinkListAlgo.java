@@ -6,8 +6,6 @@ package com.example.demo.practice;
  * 3) 两个有序的链表合并
  * 4) 删除链表倒数第n个结点
  * 5) 求链表的中间结点
- *
- * Author: Zheng
  */
 public class LinkListAlgo {
 
@@ -17,7 +15,8 @@ public class LinkListAlgo {
      * 1个头结点，2个指针，4行代码
      * 注意初始状态和结束状态，体会中间的图解过程。
      * https://www.cnblogs.com/byrhuangqiang/p/4311336.html 写的很好！
-     * @param  head
+     *
+     * @param head
      * @return
      */
     public Node reverseList1(Node head) {
@@ -62,7 +61,14 @@ public class LinkListAlgo {
     }
 
 
-    // 检测环
+    /**
+     * 检测环
+     * 1.快慢指针检测
+     * https://blog.csdn.net/u010983881/article/details/78896293 写的很好
+     *
+     * @param list
+     * @return
+     */
     public static boolean checkCircle(Node list) {
         if (list == null) return false;
 
@@ -79,13 +85,22 @@ public class LinkListAlgo {
         return false;
     }
 
-    // 有序链表合并
+
+    /**
+     * 有序链表合并
+     *
+     * @param la
+     * @param lb
+     * @return
+     */
     public static Node mergeSortedLists(Node la, Node lb) {
         if (la == null) return lb;
         if (lb == null) return la;
 
+        // 标记指针
         Node p = la;
         Node q = lb;
+        // 确定头指针
         Node head;
         if (p.data < q.data) {
             head = p;
@@ -94,6 +109,8 @@ public class LinkListAlgo {
             head = q;
             q = q.next;
         }
+
+        // 标记指针r
         Node r = head;
 
         while (p != null && q != null) {
@@ -116,10 +133,24 @@ public class LinkListAlgo {
         return head;
     }
 
-    // 删除倒数第K个结点
+
+    /**
+     * 删除倒数第K个结点
+     * https://www.cnblogs.com/edisonchou/p/4769164.html
+     * <p>
+     * （1）第一个指针从链表的头指针开始遍历向前走k-1，第二个指针保持不动；
+     * （2）从第k步开始，第二个指针也开始从链表的头指针开始遍历；
+     * （3）由于两个指针的距离保持在k-1，当第一个（走在前面的）指针到达链表的尾结点时，
+     * 第二个指针（走在后面的）指针正好是倒数第k个结点。
+     *
+     * @param list
+     * @param k
+     * @return
+     */
     public static Node deleteLastKth(Node list, int k) {
         Node fast = list;
         int i = 1;
+        // 第一个指针 fast :先找到正数第k个结点
         while (fast != null && i < k) {
             fast = fast.next;
             ++i;
