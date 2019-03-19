@@ -143,6 +143,8 @@ public class LinkListAlgo {
      * （3）由于两个指针的距离保持在k-1，当第一个（走在前面的）指针到达链表的尾结点时，
      * 第二个指针（走在后面的）指针正好是倒数第k个结点。
      *
+     * 有两种情况1.多个节点
+     *           2.只有两个结点
      * @param list
      * @param k
      * @return
@@ -150,7 +152,7 @@ public class LinkListAlgo {
     public static Node deleteLastKth(Node list, int k) {
         Node fast = list;
         int i = 1;
-        // 第一个指针 fast :先找到正数第k个结点
+        // 第一个指针 fast :先找到正数第k个结点,走k-1步
         while (fast != null && i < k) {
             fast = fast.next;
             ++i;
@@ -166,6 +168,7 @@ public class LinkListAlgo {
             slow = slow.next;
         }
 
+        // 有两种情况1.多个节点 2.只有1个结点
         if (prev == null) {
             list = list.next;
         } else {
@@ -215,5 +218,32 @@ public class LinkListAlgo {
             return data;
         }
     }
+
+
+    // 插入排序，a 表示数组，n 表示数组大小
+    public void insertionSort(int[] a, int n) {
+        if (n <= 1) return;
+
+        for (int i = 1; i < n; ++i) {
+            int value = a[i];
+            int j = i - 1;
+            // 查找插入的位置
+            for (; j >= 0; --j) {
+                if (a[j] > value) {
+                    a[j + 1] = a[j];  // 数据移动
+                } else {
+                    break;
+                }
+            }
+            a[j + 1] = value; // 插入数据
+        }
+    }
+
+
+    public static void main(String[] args) {
+        LinkListAlgo s = new LinkListAlgo();
+//        s.insertionSort();
+    }
+
 
 }
