@@ -1,6 +1,7 @@
 package com.example.demo.practice;
 
 /**
+ * 基于链表实现的队列
  * Created by Naq on 2019/3/22.
  */
 public class QueueBasedOnLinkedList {
