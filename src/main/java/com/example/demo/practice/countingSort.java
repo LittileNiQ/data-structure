@@ -39,6 +39,7 @@ public class countingSort {
         int[] r = new int[n];
 
         // 计算排序的关键步骤了，有点难理解
+        // 从后往前以便保持稳定性。从前往后就不是稳定排序了
         for (int i = n - 1; i >= 0; --i) {
             int index = c[a[i]] - 1;
             r[index] = a[i];
