@@ -142,9 +142,10 @@ public class LinkListAlgo {
      * （2）从第k步开始，第二个指针也开始从链表的头指针开始遍历；
      * （3）由于两个指针的距离保持在k-1，当第一个（走在前面的）指针到达链表的尾结点时，
      * 第二个指针（走在后面的）指针正好是倒数第k个结点。
-     *
+     * <p>
      * 有两种情况1.多个节点
-     *           2.只有两个结点
+     * 2.只有两个结点
+     *
      * @param list
      * @param k
      * @return
@@ -245,5 +246,28 @@ public class LinkListAlgo {
 //        s.insertionSort();
     }
 
+    /**
+     * 单向链表反转（倒置）问题
+     * https://blog.csdn.net/qq_35807952/article/details/80622296 源代码
+     * @param head
+     * @return
+     */
+    public static Node reverseNew(Node head) {
+
+        Node p, q, pr;
+        p = head.next;
+        q = null;
+        head.next = null;
+
+        while (p != null) {
+            pr = p.next;
+            p.next = q;
+            q = p;
+            p = pr;
+        }
+
+        head.next = q;
+        return head;
+    }
 
 }

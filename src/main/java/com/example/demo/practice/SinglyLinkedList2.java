@@ -128,7 +128,7 @@ public class SinglyLinkedList2 {
         }
     }
 
-    //无头结点的链表翻转
+    // 无头结点的链表翻转
     public Node inverseLinkList(Node p) {
 
         Node pre = null;
