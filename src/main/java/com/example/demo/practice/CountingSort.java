@@ -5,7 +5,7 @@ package com.example.demo.practice;
  * <p>
  * Created by Naq on 2019/3/25.
  */
-public class countingSort {
+public class CountingSort {
 
     // 计数排序，a是数组，n是数组大小。假设数组中存储的都是非负整数。
     public static void countingSort(int[] a, int n) {

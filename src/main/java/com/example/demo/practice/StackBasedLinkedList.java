@@ -9,7 +9,7 @@ public class StackBasedLinkedList {
     public void push(int value) {
         Node newNode = new Node(value, null);
         // 判断是否栈空
-        if (top == null) {
+        if (top ==   null) {
             top = newNode;
         } else {
             newNode.next = top;
