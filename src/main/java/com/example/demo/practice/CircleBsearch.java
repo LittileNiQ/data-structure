@@ -19,28 +19,35 @@ package com.example.demo.practice;
  * 4。如果目标元素在循环有序数组中，设定数组边界后，使用以上方法继续查找。
  * 时间复杂度为 O(logN)。
  * <p>
- * Created by Naqi on 2019/3/27/5:57.
+ * Created by Naqi on 2019/3/27.
  */
 public class CircleBsearch {
 
     public int search(int array[], int value) {
-
         int low = 0;
         int high = array.length - 1;
-
         while (low <= high) {
             int mid = low + ((high - low) >> 1);
             if (value == array[low]) return low;
             if (value == array[high]) return high;
             if (value == array[mid]) return mid;
 
+            // 查找值在循环数组中,循环数组在前，有序数组在后，
+            // 整个循环有序数组是由一个循环有序数组和另一个有序数组组成
+            // 6 _7_ 2 3 4 5
             if (value > array[mid] && value > array[high] && array[mid] < array[low]) {
                 high = mid - 1;
+                // 查找值在有序链表部分
+                // 8 _3_ 4 5 6 7
             } else if (value < array[mid] && value < array[low] && array[mid] < array[low]) {
                 high = mid - 1;
+                // 在前面的有序数组中，整个循环有序数组是由两个有序数组组成
+                // 7 _8_ 9 10 1 2 4 5 6
             } else if (value < array[mid] && value > array[low]) {
                 high = mid - 1;
             } else {
+                // 查找值在有序链表部分
+                // 7 8 9 10 1 2 _4_ 5 6
                 low = mid + 1;
             }
         }
