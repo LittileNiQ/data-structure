@@ -18,7 +18,6 @@ public class SkipList {
     // 带头链表
     // head是一个头结点，它的forward里存的是原链表以及索引层的头结点。
     private Node head = new Node();
-
     private Random r = new Random();
 
     // 跳表查找指定值
