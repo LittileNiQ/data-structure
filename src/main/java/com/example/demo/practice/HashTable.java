@@ -11,7 +11,6 @@ public class HashTable {
     public static int data[] = {69, 65, 90, 37, 92, 6, 28, 54};
     public static int hash[] = new int[13];
 
-
     // 将关键字插入到散列表中
     public static void insertHash(int hash[], int m, int data) {
         int i = 0;
