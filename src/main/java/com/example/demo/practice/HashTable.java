@@ -29,7 +29,6 @@ public class HashTable {
         for (int i = 0; i < n; i++) {
             insertHash(hash, m, data[i]);
         }
-
     }
 
     // 散列表的查找函数的编写
@@ -44,7 +43,6 @@ public class HashTable {
         } else {
             return i;
         }
-
     }
 
     public static void main(String[] args) {
