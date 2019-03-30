@@ -4,7 +4,7 @@ package com.example.demo.practice;
  * 二分查找变体
  * Created by Naqi on 2019/3/26.
  */
-public class BSearchChangeOne {
+public class BSearchVarient {
 
     // 变体一：查找第一个值等于给定值的元素
     public int bsearchOne(int[] a, int n, int value) {

@@ -4,6 +4,8 @@ import java.util.Stack;
 
 /**
  * 二叉树创建和遍历
+ * 有关树的高度问题：
+ * https://blog.csdn.net/qq_36667170/article/details/84142019
  * Created by Naq on 2019/3/29.
  */
 public class BinaryTree {
@@ -11,96 +13,100 @@ public class BinaryTree {
     Node root;
 
     // 得到树的深度
-    public Integer getHeight(){
+    public Integer getHeight() {
         return getHeight(root);
     }
 
-    private Integer getHeight(Node node){
-        if(node==null)
+    private Integer getHeight(Node node) {
+
+        if (node == null)
+//            return -1;
             return 0;
-        else{
-            int left=getHeight(node.getLeftChildTree());
-            int right=getHeight(node.getRightChildTree());
-            return left>right?left+1:right+1;// 左子树 右子树最深的，再加上父节点本身深度1
+        else {
+            int left = getHeight(node.getLeftChildTree());
+            int right = getHeight(node.getRightChildTree());
+            return left + 1;// 左子树 右子树最深的，再加上父节点本身深度1
         }
     }
 
     // 得到节点数量
-    public Integer getSize(){
+    public Integer getSize() {
         return getSize(root);
-    };
+    }
 
-    private Integer getSize(Node node){
-        if(node==null)
+    ;
+
+    private Integer getSize(Node node) {
+        if (node == null)
             return 0;
-        else{
-            int leftSize=getSize(node.getLeftChildTree());
-            int rightSize=getSize(node.getRightChildTree());
-            return leftSize+rightSize+1;
+        else {
+            int leftSize = getSize(node.getLeftChildTree());
+            int rightSize = getSize(node.getRightChildTree());
+            return leftSize + rightSize + 1;
         }
     }
 
     // 前序遍历,迭代
-    public void preOrder(Node node){
-        if(node==null)
+    public void preOrder(Node node) {
+        if (node == null)
             return;
-        else{
-            System.out.println("preOrder"+node.getData());
+        else {
+            System.out.println("preOrder" + node.getData());
             preOrder(node.getLeftChildTree());
             preOrder(node.getRightChildTree());
         }
     }
 
     // 中序遍历,迭代
-    public void midOrder(Node node){
-        if(node==null)
+    public void midOrder(Node node) {
+        if (node == null)
             return;
-        else{
+        else {
             midOrder(node.getLeftChildTree());
-            System.out.println("midOrder"+node.getData());
+            System.out.println("midOrder" + node.getData());
             midOrder(node.getRightChildTree());
         }
     }
 
     // 后序遍历,迭代
-    public void proOrder(Node node){
-        if(node==null)
+    public void proOrder(Node node) {
+        if (node == null)
             return;
-        else{
+        else {
             proOrder(node.getLeftChildTree());
             proOrder(node.getRightChildTree());
-            System.out.println("proOrder"+node.getData());
+            System.out.println("proOrder" + node.getData());
         }
     }
 
     // 前序遍历，非迭代,利用栈，要遍历一个节点，就先把它压入，再弹出，输出数据，把此节点的右节点压入，再把左节点压入
-    public void nonRecOrder(Node node){
-        if(node==null)
+    public void nonRecOrder(Node node) {
+        if (node == null)
             return;
-        Stack<Node> stack=new Stack<>();
+        Stack<Node> stack = new Stack<>();
         stack.push(root);
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             Node pop = stack.pop();
-            System.out.println("nonRecOrder:"+pop.getData());
-            if(pop.getRightChildTree()!=null)// 不要把空节点push栈
+            System.out.println("nonRecOrder:" + pop.getData());
+            if (pop.getRightChildTree() != null)// 不要把空节点push栈
                 stack.push(pop.getRightChildTree());
-            if(pop.getLeftChildTree()!=null)
+            if (pop.getLeftChildTree() != null)
                 stack.push(pop.getLeftChildTree());
         }
     }
 
     /**
-     * 			A
-     * 		B		C
+     * A
+     * B		C
      *     D		E		F
      */
-    public BinaryTree(){
-        root=new Node("A");
-        Node nodeB=new Node("B");
-        Node nodeC=new Node("C");
-        Node nodeD=new Node("D");
-        Node nodeE=new Node("E");
-        Node nodeF=new Node("F");
+    public BinaryTree() {
+        root = new Node("A");
+        Node nodeB = new Node("B");
+        Node nodeC = new Node("C");
+        Node nodeD = new Node("D");
+        Node nodeE = new Node("E");
+        Node nodeF = new Node("F");
         nodeB.setLeftChildTree(nodeD);
         nodeB.setRightChildTree(nodeE);
         nodeC.setRightChildTree(nodeF);
@@ -108,7 +114,7 @@ public class BinaryTree {
         root.setRightChildTree(nodeC);
     }
 
-    public class Node<T>{
+    public class Node<T> {
         private Integer index;
         private Node leftChildTree;
         private Node rightChildTree;
@@ -146,17 +152,17 @@ public class BinaryTree {
             this.data = data;
         }
 
-        public Node(T data){
-            this.data=data;
-            leftChildTree=null;
-            rightChildTree=null;
+        public Node(T data) {
+            this.data = data;
+            leftChildTree = null;
+            rightChildTree = null;
         }
     }
 
     public static void main(String[] args) {
-        BinaryTree tree=new BinaryTree();
-        System.out.println("treeHeight"+tree.getHeight());
-        System.out.println("treeSize"+tree.getSize());
+        BinaryTree tree = new BinaryTree();
+        System.out.println("treeHeight" + tree.getHeight());
+        System.out.println("treeSize" + tree.getSize());
         tree.preOrder(tree.root);
         tree.midOrder(tree.root);
         tree.proOrder(tree.root);
