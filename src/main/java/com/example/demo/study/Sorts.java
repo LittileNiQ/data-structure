@@ -1,4 +1,4 @@
-package com.example.demo.practice;
+package com.example.demo.study;
 
 /**
  * 冒泡排序、插入排序、选择排序

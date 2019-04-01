@@ -1,6 +1,4 @@
-package com.example.demo.practice;
-
-import java.util.concurrent.BlockingQueue;
+package com.example.demo.study;
 
 /**
  * 循环队列

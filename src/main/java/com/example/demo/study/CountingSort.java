@@ -1,4 +1,4 @@
-package com.example.demo.practice;
+package com.example.demo.study;
 
 /**
  * 计数排序。

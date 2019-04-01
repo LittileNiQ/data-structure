@@ -1,6 +1,5 @@
-package com.example.demo.practice;
+package com.example.demo.study;
 
-import java.util.LinkedList;
 import java.util.Scanner;
 
 /**

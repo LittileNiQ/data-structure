@@ -1,4 +1,4 @@
-package com.example.demo.practice;
+package com.example.demo.study;
 
 /**
  * 二分查找(用最省内存的方式实现快速查找功能)

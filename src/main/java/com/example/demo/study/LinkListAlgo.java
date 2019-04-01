@@ -1,4 +1,4 @@
-package com.example.demo.practice;
+package com.example.demo.study;
 
 /**
  * 1) 单链表反转
@@ -102,6 +102,7 @@ public class LinkListAlgo {
         Node q = lb;
         // 确定头指针
         Node head;
+        // 确定头指针
         if (p.data < q.data) {
             head = p;
             p = p.next;
@@ -113,6 +114,7 @@ public class LinkListAlgo {
         // 标记指针r
         Node r = head;
 
+        // 对链表数据依次进行排序
         while (p != null && q != null) {
             if (p.data < q.data) {
                 r.next = p;

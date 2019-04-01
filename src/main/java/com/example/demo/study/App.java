@@ -1,4 +1,4 @@
-package com.example.demo.practice;
+package com.example.demo.study;
 
 import java.util.Stack;
 import java.util.TreeSet;

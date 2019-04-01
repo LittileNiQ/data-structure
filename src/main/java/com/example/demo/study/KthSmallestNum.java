@@ -1,4 +1,4 @@
-package com.example.demo.practice;
+package com.example.demo.study;
 
 /**
  * O(n) 时间复杂度内求无序数组中的第 K 大元素。分治思想。
