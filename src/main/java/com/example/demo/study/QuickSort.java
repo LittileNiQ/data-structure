@@ -35,6 +35,7 @@ public class QuickSort {
                 if (i == j) {
                     ++i;
                 } else {
+                    // a[i] a[j]交换
                     int tmp = a[i];
                     a[i++] = a[j];
                     a[j] = tmp;
