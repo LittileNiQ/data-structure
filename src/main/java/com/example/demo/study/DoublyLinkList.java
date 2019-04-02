@@ -13,7 +13,8 @@ public class DoublyLinkList<T> {
     private Link<T> frist;
     private Link<T> last;
 
-    public DoublyLinkList() {//初始化首尾指针
+    // 初始化首尾指针
+    public DoublyLinkList() {
         frist = null;
         last = null;
     }
