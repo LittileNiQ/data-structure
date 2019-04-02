@@ -1,6 +1,7 @@
 package com.example.demo.practice.leecode;
 
 /**
+ * Leecode17
  * 最长连续子串最大和
  * 很多动态规划算法非常像数学中的递推。我们如果能找到一个合适的递推公式，就能很容易的解决问题。
  * 我们用dp[n]表示以第n个数结尾的最大连续子序列的和，于是存在以下递推公式：dp[n] = max(0, dp[n-1]) + num[n]。
