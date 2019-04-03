@@ -2,6 +2,7 @@ package com.example.demo.study;
 
 /**
  * 堆及堆排序
+ * 我们知道，一个包含+nn+个节点的完全二叉树，树的高度不会超过+log2n 。堆化的过程是顺着节点所在路径比较交换的，所以堆化的时间复杂度跟树的高度成正比，也就是+O(logn)。插入数据和删除堆顶元素的主要逻辑就是堆化，所以，往堆中插入一个元素和删除堆顶元素的时间复杂度都是+O(logn)
  * Created by Naq on 2019/4/3.
  */
 public class Heap {
@@ -15,6 +16,7 @@ public class Heap {
         count = 0;
     }
 
+    // 往堆中插入一个数据
     public void insert(int data) {
         if (count >= n) return; // 堆满了
         ++count;
@@ -59,6 +61,16 @@ public class Heap {
         }
     }
 
+    // n 表示数据的个数，数组 a 中的数据从下标 1 到 n 的位置。
+    public void sort(int[] a, int n) {
+        buildHeap(a, n);
+        int k = n;
+        while (k > 1) {
+            swap(a, 1, k);
+            --k;
+            heapify(a, k, 1);
+        }
+    }
 
 }
 
