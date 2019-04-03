@@ -11,7 +11,7 @@ package com.example.demo.practice.leecode;
  */
 public class MAxSumSubSeq {
     public static void main(String[] args) {
-        int[] a = {-12, 10, -4, -13, -5, -32};
+        int[] a = {1, 10, -4, 5, -5, 32};
         getMaxSumSeq(a);
     }
 
@@ -22,6 +22,7 @@ public class MAxSumSubSeq {
         int end = -1;
         int temp = -1;
         for (int i = 0; i < a.length; i++) {
+
             if (sum > 0) {
                 sum += a[i];
             } else {
@@ -33,6 +34,7 @@ public class MAxSumSubSeq {
                 rmax = sum;
                 end = i;
             }
+            System.out.println(sum + "--" + rmax);
         }
         for (int j = start; j <= end; j++) {
             System.out.print(a[j] + " ");
