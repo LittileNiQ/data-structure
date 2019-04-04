@@ -4,6 +4,7 @@ import java.util.PriorityQueue;
 
 /**
  * 利用堆求动态数组中位数
+ * 利用基于优先级堆的无界队列来实现
  * 我们需要维护两个堆，一个大顶堆，一个小顶堆。大顶堆中存储前半部分数据，
  * 小顶堆中存储后半部分数据，且小顶堆中的数据都大于大顶堆中的数据。
  * Created by Naq on 2019/4/4.
@@ -28,7 +29,7 @@ public class Median {
 
     /**
      * 小顶堆,用来存储后半部分的数据，如果完整为100,那此存储的为51-100
-     * 默认自然排序，从小到大
+     * 利用优先队列来实现，priorityQueue默认自然排序，从小到大
      */
     private PriorityQueue<Integer> afterLittleHeap = new PriorityQueue<>(51);
 
