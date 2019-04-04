@@ -27,7 +27,7 @@ public class TopKcount {
      */
     public int[] topk(int[] data, int k) {
 
-        // 构建一个基于优先级堆的无界队列（相当于构建一个k大小的小根堆）
+        // 构建一个基于优先级堆的无界队列（相当于构建一个k大小的小顶堆）
         PriorityQueue<Integer> queue = new PriorityQueue<>(k);
 
         for (int i = 0; i < data.length; i++) {
