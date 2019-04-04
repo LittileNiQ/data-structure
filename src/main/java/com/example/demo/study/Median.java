@@ -125,7 +125,7 @@ public class Median {
             median.putNum(num);
             System.out.println(median.getMidValue());
         }
-        System.out.println(median);
+
     }
 
 }
