@@ -5,6 +5,7 @@ import java.util.Queue;
 
 /**
  * 邻接表存储无向图
+ * 无向图的遍历
  * Created by Naqi on 2019/4/6.
  */
 public class Graph { // 无向图
