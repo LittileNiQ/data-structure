@@ -1,6 +1,7 @@
 package com.example.demo.study;
 
 /**
+ * 有点儿懵....
  * Created by Naq on 2019/5/6.
  */
 public class Kmp {
