@@ -8,6 +8,7 @@ package com.data.structure.study;
  * 4.每个节点，从该节点到达其可达叶子节点的所有路径，都包含相同数目的黑色节点。
  *
  * https://www.cnblogs.com/qingergege/p/7351659.html  写的特别好，很清楚！
+ * https://segmentfault.com/a/1190000014037447
  * Created by Naq on 2019/4/1.
  */
 public class RbTree {
