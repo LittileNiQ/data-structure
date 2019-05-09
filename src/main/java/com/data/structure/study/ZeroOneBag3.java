@@ -3,6 +3,7 @@ package com.data.structure.study;
 /**
  * 0-1背包：动态规划
  * https://blog.csdn.net/qq_38410730/article/details/81667885
+ * https://blog.csdn.net/weixin_39059738/article/details/79924049
  * https://www.cnblogs.com/Christal-R/p/Dynamic_programming.html
  * Created by Naq on 2019/5/9.
  * <p>
@@ -29,6 +30,7 @@ public class ZeroOneBag3 {
         return 0;
     }
 
+    // 优化
     public static int knapsack2(int[] items, int n, int w) {
         boolean[] states = new boolean[w + 1]; // 默认值 false
         states[0] = true;  // 第一行的数据要特殊处理，可以利用哨兵优化
