@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 /**
  * 最短路径：dijkstra
+ * https://blog.csdn.net/wang2332/article/details/76652704
  * Created by Naq on 2019/5/24.
  */
 public class Graph { // 有向有权图的邻接表表示
@@ -51,10 +52,37 @@ public class Graph { // 有向有权图的邻接表表示
         System.out.print("->" + t);
     }
 
+    // 因为 Java 提供的优先级队列，没有暴露更新数据的接口，所以我们需要重新实现一个
+    private class PriorityQueue { // 根据 vertex.dist 构建小顶堆
+        private Vertex[] nodes;
+        private int count;
+
+        public PriorityQueue(int v) {
+            this.nodes = new Vertex[v + 1];
+            this.count = v;
+        }
+
+        public Vertex poll() {
+            return null;
+        }
+
+        public void add(Vertex vertex) {
+
+        }
+
+        // 更新结点的值，并且从下往上堆化，重新符合堆的定义。时间复杂度 O(logn)。
+        public void update(Vertex vertex) {
+        }
+
+        public boolean isEmpty() {
+            return true;
+        }
+    }
 
     public void dijkstra(int s, int t) { // 从顶点 s 到顶点 t 的最短路径
         int[] predecessor = new int[this.v]; // 用来还原最短路径
         Vertex[] vertexes = new Vertex[this.v];
+        // 初始化设置为无穷大
         for (int i = 0; i < this.v; ++i) {
             vertexes[i] = new Vertex(i, Integer.MAX_VALUE);
         }
@@ -71,6 +99,7 @@ public class Graph { // 有向有权图的邻接表表示
                 Vertex nextVertex = vertexes[e.tid]; // minVertex-->nextVertex
                 if (minVertex.dist + e.w < nextVertex.dist) { // 更新 next 的 dist
                     nextVertex.dist = minVertex.dist + e.w;
+                    vertexes[e.tid] = nextVertex;
                     predecessor[nextVertex.id] = minVertex.id;
                     if (inqueue[nextVertex.id] == true) {
                         queue.update(nextVertex); // 更新队列中的 dist 值
@@ -84,32 +113,6 @@ public class Graph { // 有向有权图的邻接表表示
         // 输出最短路径
         System.out.print(s);
         print(s, t, predecessor);
-    }
-
-    // 因为 Java 提供的优先级队列，没有暴露更新数据的接口，所以我们需要重新实现一个
-    private class PriorityQueue { // 根据 vertex.dist 构建小顶堆
-        private Vertex[] nodes;
-        private int count;
-
-        public PriorityQueue(int v) {
-            this.nodes = new Vertex[v + 1];
-            this.count = v;
-        }
-
-        public Vertex poll() {
-            return null;
-        }
-
-        public void add(Vertex vertex) {
-        }
-
-        // 更新结点的值，并且从下往上堆化，重新符合堆的定义。时间复杂度 O(logn)。
-        public void update(Vertex vertex) {
-        }
-
-        public boolean isEmpty() {
-            return true;
-        }
     }
 
 
