@@ -8,6 +8,7 @@ import java.util.LinkedList;
  * Created by Naqi on 2019/5/26.
  */
 public class Graph {
+
     private LinkedList<Edge> adj[]; // 邻接表
     private int v; // 顶点个数
 
