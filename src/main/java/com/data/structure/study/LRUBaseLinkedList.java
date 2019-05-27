@@ -12,6 +12,8 @@ import java.util.Scanner;
  *  2. 如果此数据没有在缓存链表中，又可以分为两种情况：
  *   ——如果此时缓存未满，则将此结点直接插入到链表的头部；
  *   ——如果此时缓存已满，则链表尾结点删除，将新的数据结点插入链表的头部。
+ *
+ *   https://www.cnblogs.com/Dhouse/p/8615481.html 0527补充
  * Created by Naq on 2019/3/12.
  */
 
