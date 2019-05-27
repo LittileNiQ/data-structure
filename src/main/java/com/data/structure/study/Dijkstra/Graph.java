@@ -99,6 +99,7 @@ public class Graph { // 有向有权图的邻接表表示
                 Vertex nextVertex = vertexes[e.tid]; // minVertex-->nextVertex
                 if (minVertex.dist + e.w < nextVertex.dist) { // 更新 next 的 dist
                     nextVertex.dist = minVertex.dist + e.w;
+                    // 下面这句代码是自己补充的
                     vertexes[e.tid] = nextVertex;
                     predecessor[nextVertex.id] = minVertex.id;
                     if (inqueue[nextVertex.id] == true) {

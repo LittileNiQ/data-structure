@@ -1,14 +1,13 @@
 package com.data.structure.study;
 
 import java.util.LinkedList;
-import java.util.Queue;
 
 /**
- * 邻接表存储无向图
- * 无向图的遍历
- * Created by Naqi on 2019/4/6.
+ * 图的拓扑排序：Kahn
+ * Created by Naqi on 2019/5/22.
  */
-public class Graph { // 无向图
+
+public class Graph {
     private int v; // 顶点的个数
     private LinkedList<Integer> adj[]; // 邻接表
 
@@ -20,76 +19,31 @@ public class Graph { // 无向图
         }
     }
 
-    public void addEdge(int s, int t) { // 无向图一条边存两次
+    public void addEdge(int s, int t) { // s 先于 t，边 s->t
         adj[s].add(t);
-        adj[t].add(s);
     }
 
-    public void bfs(int s, int t) {
-        if (s == t) return;
-        // 已经被访问的顶点，用来避免顶点被重复访问。如果顶点 q 被访问，那相应的 visited[q] 会被设置为 true。
-        boolean[] visited = new boolean[v];
-        visited[s]=true;
-        // 用来存储已经被访问、但相连的顶点还没有被访问的顶点
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(s);
-        // 用来记录搜索路径
-        int[] prev = new int[v];
+    public void topoSortByKahn() {
+        int[] inDegree = new int[v]; // 统计每个顶点的入度
         for (int i = 0; i < v; ++i) {
-            prev[i] = -1;
-        }
-        while (queue.size() != 0) {
-            int w = queue.poll();
-            for (int i = 0; i < adj[w].size(); ++i) {
-                int q = adj[w].get(i);
-                if (!visited[q]) {
-                    prev[q] = w;
-                    if (q == t) {
-                        print(prev, s, t);
-                        return;
-                    }
-                    visited[q] = true;
-                    queue.add(q);
-                }
+            for (int j = 0; j < adj[i].size(); ++j) {
+                int w = adj[i].get(j); // i->w
+                inDegree[w]++;
             }
         }
-    }
-
-    boolean found = false; // 全局变量或者类成员变量
-
-    public void dfs(int s, int t) {
-        found = false;
-        boolean[] visited = new boolean[v];
-        int[] prev = new int[v];
+        LinkedList<Integer> queue = new LinkedList<>();
         for (int i = 0; i < v; ++i) {
-            prev[i] = -1;
+            if (inDegree[i] == 0) queue.add(i);
         }
-        recurDfs(s, t, visited, prev);
-        print(prev, s, t);
-    }
-
-    private void recurDfs(int w, int t, boolean[] visited, int[] prev) {
-        if (found == true) return;
-        visited[w] = true;
-        if (w == t) {
-            found = true;
-            return;
-        }
-        for (int i = 0; i < adj[w].size(); ++i) {
-            int q = adj[w].get(i);
-            if (!visited[q]) {
-                prev[q] = w;
-                recurDfs(q, t, visited, prev);
+        while (!queue.isEmpty()) {
+            int i = queue.remove();
+            System.out.print("->" + i);
+            for (int j = 0; j < adj[i].size(); ++j) {
+                int k = adj[i].get(j);
+                inDegree[k]--;
+                if (inDegree[k] == 0) queue.add(k);
             }
         }
-    }
-
-    private void print(int[] prev, int s, int t) { // 递归打印 s->t 的路径
-        if (prev[t] != -1 && t != s) {
-            print(prev, s, prev[t]);
-        }
-        System.out.print(t + " ");
     }
 
 }
-
