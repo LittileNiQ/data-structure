@@ -2,10 +2,12 @@ package com.data.structure.study;
 
 /**
  * 1) 单链表反转
- * 2) 链表中环的检测
+ * 2) 链表中环的检测:
+ *    两种方法：https://maimai.cn/article/detail?fid=1293112579&efid=z2gGFNbPJFXzOKM6ieLpfg
  * 3) 两个有序的链表合并
  * 4) 删除链表倒数第n个结点
  * 5) 求链表的中间结点
+ * leetcode:206，141，21，19，876
  */
 public class LinkListAlgo {
 
@@ -49,6 +51,7 @@ public class LinkListAlgo {
         Node currentNode = list;
         while (currentNode != null) {
             Node nextNode = currentNode.next;
+            // 头指针
             if (nextNode == null) {
                 headNode = currentNode;
             }
@@ -251,6 +254,7 @@ public class LinkListAlgo {
     /**
      * 单向链表反转（倒置）问题
      * https://blog.csdn.net/qq_35807952/article/details/80622296 源代码
+     *
      * @param head
      * @return
      */

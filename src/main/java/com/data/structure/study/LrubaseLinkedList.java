@@ -17,7 +17,7 @@ import java.util.Scanner;
  * Created by Naq on 2019/3/12.
  */
 
-public class LRUBaseLinkedList<T> {
+public class LrubaseLinkedList<T> {
 
     /**
      * 默认链表容量
@@ -27,7 +27,7 @@ public class LRUBaseLinkedList<T> {
     /**
      * 头结点
      */
-    private SNode<T> headNode;
+    private Snode<T> headNode;
 
     /**
      * 链表长度
@@ -39,21 +39,16 @@ public class LRUBaseLinkedList<T> {
      */
     private Integer capacity;
 
-    public LRUBaseLinkedList() {
-        this.headNode = new SNode<>();
+    public LrubaseLinkedList() {
+        this.headNode = new Snode<>();
         this.capacity = DEFAULT_CAPACITY;
         this.length = 0;
     }
 
-//    public LRUBaseLinkedList(Integer capacity) {
-//        this.headNode = new SNode<>();
-//        this.capacity = capacity;
-//        this.length = 0;
-//    }
 
     public void add(T data) {
         // 获取查找元素的前一个结点
-        SNode preNode = findPreNode(data);
+        Snode preNode = findPreNode(data);
 
         // 链表中存在，删除原数据，再插入到链表的头部
         if (preNode != null) {
@@ -73,8 +68,8 @@ public class LRUBaseLinkedList<T> {
      *
      * @param preNode
      */
-    private void deleteElemOptim(SNode preNode) {
-        SNode temp = preNode.getNext();
+    private void deleteElemOptim(Snode preNode) {
+        Snode temp = preNode.getNext();
         preNode.setNext(temp.getNext());
         temp = null;
         length--;
@@ -86,9 +81,9 @@ public class LRUBaseLinkedList<T> {
      * @param data
      */
     private void intsertElemAtBegin(T data) {
-        SNode next = headNode.getNext();
+        Snode next = headNode.getNext();
         // 将对应指针和value值的结点插入
-        headNode.setNext(new SNode(data, next));
+        headNode.setNext(new Snode(data, next));
         length++;
     }
 
@@ -99,8 +94,8 @@ public class LRUBaseLinkedList<T> {
      * @param data
      * @return
      */
-    private SNode findPreNode(T data) {
-        SNode node = headNode;
+    private Snode findPreNode(T data) {
+        Snode node = headNode;
         while (node.getNext() != null) {
             if (data.equals(node.getNext().getElement())) {
                 return node;
@@ -114,7 +109,7 @@ public class LRUBaseLinkedList<T> {
      * 删除尾结点
      */
     private void deleteElemAtEnd() {
-        SNode ptr = headNode;
+        Snode ptr = headNode;
         // 空链表直接返回
         if (ptr.getNext() == null) {
             return;
@@ -122,17 +117,18 @@ public class LRUBaseLinkedList<T> {
 
         // 倒数第二个结点
         while (ptr.getNext().getNext() != null) {
-            ptr = ptr.getNext();// 倒数第二个
+            // 倒数第二个
+            ptr = ptr.getNext();
         }
 
-        SNode tmp = ptr.getNext();
+        Snode tmp = ptr.getNext();
         ptr.setNext(null);
         tmp = null;
         length--;
     }
 
     private void printAll() {
-        SNode node = headNode.getNext();
+        Snode node = headNode.getNext();
         while (node != null) {
             System.out.print(node.getElement() + ",");
             node = node.getNext();
@@ -140,22 +136,22 @@ public class LRUBaseLinkedList<T> {
         System.out.println();
     }
 
-    public class SNode<T> {
+    public class Snode<T> {
 
         private T element;
 
-        private SNode next;
+        private Snode next;
 
-        public SNode(T element) {
+        public Snode(T element) {
             this.element = element;
         }
 
-        public SNode(T element, SNode next) {
+        public Snode(T element, Snode next) {
             this.element = element;
             this.next = next;
         }
 
-        public SNode() {
+        public Snode() {
             this.next = null;
         }
 
@@ -167,17 +163,17 @@ public class LRUBaseLinkedList<T> {
             this.element = element;
         }
 
-        public SNode getNext() {
+        public Snode getNext() {
             return next;
         }
 
-        public void setNext(SNode next) {
+        public void setNext(Snode next) {
             this.next = next;
         }
     }
 
     public static void main(String[] args) {
-        LRUBaseLinkedList list = new LRUBaseLinkedList();
+        LrubaseLinkedList list = new LrubaseLinkedList();
         Scanner sc = new Scanner(System.in);
         while (true) {
             list.add(sc.nextInt());
