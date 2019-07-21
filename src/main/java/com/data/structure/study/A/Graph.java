@@ -37,8 +37,6 @@ public class Graph {
         vertexes[id] = new Vertex(id, x, y);
     }
 
-
-
     public Graph(int v) {
         this.v = v;
         this.adj = new LinkedList[v];

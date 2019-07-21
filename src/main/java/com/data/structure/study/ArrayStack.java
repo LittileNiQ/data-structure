@@ -2,6 +2,7 @@ package com.data.structure.study;
 
 /**
  * Created by Naqi on 2019/3/19.
+ * leetcode上关于栈的题目可以先做:20,155,232,844,224,682,496.
  */
 
 // 基于数组实现的顺序栈
