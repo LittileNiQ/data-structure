@@ -71,7 +71,7 @@ public class BinarySearchTree {
             }
             // 将minP的数据替换到p中
             p.data = minP.data;
-            // 下面就变成了删除minP了
+            // 下面就变成了删除minP了,需要结合后面的往下看，这里暂时看不出来删除
             p = minP;
             pp = minPP;
         }

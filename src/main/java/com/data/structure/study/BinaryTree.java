@@ -25,7 +25,13 @@ public class BinaryTree {
         else {
             int left = getHeight(node.getLeftChildTree());
             int right = getHeight(node.getRightChildTree());
-            return left + 1;// 左子树 右子树最深的，再加上父节点本身深度1
+            // 左子树 右子树最深的，再加上父节点本身深度1
+            if(left>right){
+                return left + 1;
+            }
+            else{
+                return right+1;
+            }
         }
     }
 
