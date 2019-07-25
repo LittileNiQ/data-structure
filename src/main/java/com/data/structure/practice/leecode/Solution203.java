@@ -23,7 +23,6 @@ public class Solution203 {
         if (head == null)
             return head;
 
-
         ListNode prev = head;
         //确保当前结点后还有结点
         while (prev.next != null) {
