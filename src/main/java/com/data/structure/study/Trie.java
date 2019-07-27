@@ -31,7 +31,9 @@ public class Trie {
             }
             p = p.children[index];
         }
-        if (p.isEndingChar == false) return false; // 不能完全匹配，只是前缀
+        // 不能完全匹配，只是前缀
+        if (p.isEndingChar == false) return false;
+
         else return true; // 找到 pattern
     }
 

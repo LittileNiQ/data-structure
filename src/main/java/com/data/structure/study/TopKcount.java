@@ -46,6 +46,7 @@ public class TopKcount {
             }
         }
 
+
         int[] result = new int[k];
         int index = 0;
         // 遍历完成后，小顶堆的数据就为需要求得的topk的数据
