@@ -4,7 +4,7 @@ package com.data.structure.study;
  * 回溯算法： 0-1背包
  * Created by Naq on 2019/5/9.
  */
-public class ZeroOneBag0 {
+public class  ZeroOneBag0 {
     public int maxW = Integer.MIN_VALUE; // 存储背包中物品总重量的最大值
 
     // cw 表示当前已经装进去的物品的重量和；i 表示考察到哪个物品了；

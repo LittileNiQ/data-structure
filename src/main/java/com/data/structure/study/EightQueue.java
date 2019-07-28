@@ -48,4 +48,8 @@ public class EightQueue {
     }
 
 
+    public static void main(String[] args) {
+        EightQueue eightQueue = new EightQueue();
+        eightQueue.cal8queens(0);
+    }
 }
