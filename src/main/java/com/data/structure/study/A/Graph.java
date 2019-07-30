@@ -125,7 +125,7 @@ public class Graph {
         }
         // 输出路径
         System.out.print(s);
-        print(s, t, predecessor); // print 函数请参看 Dijkstra 算法的实现
+        print(s, t, predecessor); // print 函数请参看 Dijkstra1 算法的实现
     }
 
     private void print(int s, int t, int[] predecessor) {

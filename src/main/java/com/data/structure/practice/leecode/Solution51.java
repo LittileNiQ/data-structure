@@ -70,8 +70,13 @@ public class Solution51 {
     }
 
     public static void main(String[] args) {
-        Solution51 solution51 = new Solution51();
-        System.out.println(solution51.solveNQueens(4));
+//        Solution51 solution51 = new Solution51();
+//        System.out.println(solution51.solveNQueens(4));
+        int i = 1;
+        for (i = 1; i < 1000000000; i++) {
+            i = i * 1;
+        }
+        System.out.println(i);
     }
 
 }
