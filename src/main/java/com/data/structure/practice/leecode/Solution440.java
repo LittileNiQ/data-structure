@@ -6,7 +6,8 @@ package com.data.structure.practice.leecode;
  * Created by Naqi on 2019/7/30.
  */
 public class Solution440 {
-    public int findKthNumber(int n, int k) {
+    public int findKthNumber
+            (int n, int k) {
         int cur = 1;
         --k;
         while (k > 0) {

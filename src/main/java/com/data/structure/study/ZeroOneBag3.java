@@ -5,8 +5,7 @@ package com.data.structure.study;
  * https://blog.csdn.net/qq_38410730/article/details/81667885
  * https://blog.csdn.net/weixin_39059738/article/details/79924049
  * https://www.cnblogs.com/Christal-R/p/Dynamic_programming.html
- * Created by Naq on 2019/5/9.
- * <p>
+ *
  * Created by Naq on 2019/5/9.
  */
 public class ZeroOneBag3 {
