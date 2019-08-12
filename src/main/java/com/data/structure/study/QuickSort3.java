@@ -23,7 +23,6 @@ public class QuickSort3 {
             quickSort(arr, 0, index - 1);
             quickSort(arr, index + 1, high);
         }
-
     }
 
     private static int getIndex(int[] arr, int low, int high) {
