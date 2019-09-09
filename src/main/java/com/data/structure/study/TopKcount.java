@@ -18,7 +18,7 @@ import java.util.PriorityQueue;
  * 利用PriorityQueue
  * Created by Naq on 2019/4/4.
  */
-public class TopKcount {
+public class  TopKcount {
 
     /**
      * 求数据中前K大数据

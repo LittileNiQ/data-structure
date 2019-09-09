@@ -24,7 +24,7 @@ public class Solution862 {
             }
             if (sum >= K) {
                 while (sum - A[begin] >= K || A[begin] <= 0)
-                    sum -= A[begin++];
+                     sum -= A[begin++];
                 int length = i - begin + 1;
                 if (res < 0 || res > length)
                     res = length;

@@ -6,8 +6,7 @@ package com.data.structure.practice.leecode;
  * Created by Naqi on 2019/7/30.
  */
 public class Solution440 {
-    public int findKthNumber
-            (int n, int k) {
+    public int findKthNumber(int n, int k) {
         int cur = 1;
         --k;
         while (k > 0) {
@@ -30,6 +29,6 @@ public class Solution440 {
 
     public static void main(String[] args) {
         Solution440 solution440 = new Solution440();
-        solution440.findKthNumber(103, 4);
+        System.out.println(solution440.findKthNumber(103, 4));
     }
 }

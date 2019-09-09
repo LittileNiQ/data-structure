@@ -141,7 +141,7 @@ public class LinkListAlgo {
 
     /**
      * 删除倒数第K个结点
-     * https://www.cnblogs.com/edisonchou/p/4769164.html
+     t* htps://www.cnblogs.com/edisonchou/p/4769164.html
      * <p>
      * （1）第一个指针从链表的头指针开始遍历向前走k-1，第二个指针保持不动；
      * （2）从第k步开始，第二个指针也开始从链表的头指针开始遍历；
@@ -170,6 +170,7 @@ public class LinkListAlgo {
         Node prev = null;
         while (fast.next != null) {
             fast = fast.next;
+            // 保留待删除的前一个结点
             prev = slow;
             slow = slow.next;
         }

@@ -5,10 +5,10 @@ package com.data.structure.practice.leecode;
  */
 public class Solution151 {
     public String reverseWords(String s) {
-        char[] chas = s.toCharArray();
-        int begin = 0;
-        String streamStr = String.valueOf(chas);
-        String[] arr = streamStr.trim().split("\\s+");
+//        char[] chas = s.toCharArray();
+
+//        String streamStr = String.valueOf(chas);
+        String[] arr = s.trim().split("\\s+");
         StringBuilder sb = new StringBuilder();
         for (int i = arr.length-1; i >=0 ; i--) {
             sb.append(String.valueOf(arr[i]));
