@@ -8,7 +8,7 @@ package com.data.structure.study;
 public class CountingSort {
 
     // 计数排序，a是数组，n是数组大小。假设数组中存储的都是非负整数。
-    public static void countingSort(int[] a, int n) {
+    public void countingSort(int[] a, int n) {
         if (n <= 1) return;
 
         // 查找数组中数据的范围，查找最大值
@@ -21,9 +21,9 @@ public class CountingSort {
 
         // 申请一个计数数组c，下标大小[0,max]
         int[] c = new int[max + 1];
-        for (int i = 0; i < max + 1; ++i) {
-            c[i] = 0;
-        }
+//        for (int i = 0; i < max + 1; ++i) {
+//            c[i] = 0;
+//        }
 
         // 计算每个元素的个数，放入c中
         for (int i = 0; i < n; ++i) {
@@ -50,6 +50,16 @@ public class CountingSort {
         for (int i = 0; i < n; ++i) {
             a[i] = r[i];
         }
+    }
+
+    public static void main(String[] args) {
+        CountingSort sort1 = new CountingSort();
+        int s[] = {2, 5, 3, 0, 2, 3, 0, 3};
+        sort1.countingSort(s, 8);
+        for (int i : s) {
+            System.out.print(" " + i);
+        }
+
     }
 
 }

@@ -121,18 +121,10 @@ public class BinaryTree {
     }
 
     public class Node<T> {
-        private Integer index;
-        private Node leftChildTree;
+         private Node leftChildTree;
         private Node rightChildTree;
         private T data;
 
-        public Integer getIndex() {
-            return index;
-        }
-
-        public void setIndex(Integer index) {
-            this.index = index;
-        }
 
         public Node getLeftChildTree() {
             return leftChildTree;

@@ -5,11 +5,11 @@ package com.data.structure.study;
  */
 public class QuickSort3 {
     public static void main(String[] args) {
-        int[] arr = { 49, 38, 65, 97, 23, 22, 76, 1, 5, 8, 2, 0, -1, 22 };
+        int[] arr = {49, 38, 65, 97, 23, 22, 76, 1, 5, 8, 2, 0, -1, 22};
         quickSort(arr, 0, arr.length - 1);
         System.out.println("排序后:");
         for (int i : arr) {
-            System.out.print(i+" ");
+            System.out.print(i + " ");
         }
     }
 
@@ -46,6 +46,7 @@ public class QuickSort3 {
         // 跳出循环时low和high相等,此时的low或high就是tmp的正确索引位置
         // 由原理部分可以很清楚的知道low位置的值并不是tmp,所以需要将tmp赋值给arr[low]
         arr[low] = tmp;
+        System.out.println("low---" + low);
         return low; // 返回tmp的正确位置
     }
- }
+}
